@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaun Banega Crorepati</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with Host Area -->
+        <div class="header">
+            <div class="host-area">
+                <div class="host-light"></div>
+                <h1 class="logo">KAUN BANEGA CROREPATI</h1>
+                <div class="host-name">Hosted by AI Amitabh</div>
+            </div>
+        </div>
+
+        <!-- Main Game Screen -->
+        <div class="main-screen">
+            <!-- Current Winnings -->
+            <div class="winnings-display">
+                <div class="current-winnings">
+                    <span class="rupees">₹</span>
+                    <span id="currentAmount">0</span>
+                </div>
+                <div class="level-display" id="levelDisplay">Level 1</div>
+            </div>
+
+            <!-- Timer -->
+            <div class="timer-container">
+                <div class="timer-circle">
+                    <svg class="timer-svg" viewBox="0 0 36 36">
+                        <path class="timer-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path id="timer-path" class="timer-path" stroke-dasharray="100" stroke-dashoffset="100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <div class="timer-text" id="timerText">20</div>
+                </div>
+            </div>
+
+            <!-- Question Area -->
+            <div class="question-container" id="questionContainer">
+                <div class="question-card" id="questionCard">
+                    <div class="question-text" id="questionText">Welcome to Kaun Banega Crorepati!</div>
+                </div>
+            </div>
+
+            <!-- Options -->
+            <div class="options-container" id="optionsContainer">
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Lifelines -->
+            <div class="lifelines-container">
+                <div class="lifeline" id="lifeline50">
+                    <div class="lifeline-icon">50-50</div>
+                    <div class="lifeline-label">50:50</div>
+                </div>
+                <div class="lifeline" id="lifelineSkip">
+                    <div class="lifeline-icon">⏭️</div>
+                    <div class="lifeline-label">Skip</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="modal-overlay" id="gameOverModal">
+            <div class="modal">
+                <div class="celebration" id="celebration"></div>
+                <h2 id="finalMessage">Game Over!</h2>
+                <div class="final-winnings">
+                    <span class="rupees">₹</span>
+                    <span id="finalAmount">0</span>
+                </div>
+                <button class="restart-btn" id="restartBtn">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Audience/Lock Lifeline Placeholders -->
+        <div class="bottom-panel">
+            <div class="audience-meter">
+                <div class="meter-label">Audience Poll</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
